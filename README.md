@@ -1,0 +1,31 @@
+## Интерфейс для CRM-системы на языке Javascript
+
+****
+
+CRM система с удобным интерфейсом 
+
+### Для запуска:
+- перейдите в терминале в папку **crm-backend**    
+
+- напишите команду **`node index`** для включения сервера
+
+Сервер CRM запущен. Вы можете использовать его по адресу http://localhost:3000
+
+- после этого откройте папку проекта **src**
+  
+- затем откройте файл **index.html**, нажав правой кнопкой мыши на пункт "Open with live server"
+
+- Нажмите CTRL+C, чтобы остановить сервер
+
+### Доступные методы:
++ `GET /api/clients` - получить список клиентов, в query параметр search можно передать поисковый запрос
++ `POST /api/clients` - создать клиента, в теле запроса нужно передать объект `{ name: string, surname: string, lastName?: string, contacts?: object[] }`
+  + contacts - массив объектов контактов вида { type: string, value: string }
++ `GET /api/clients/{id}` - получить клиента по его ID
++ `PATCH /api/clients/{id}` - изменить клиента с ID, в теле запроса нужно передать объект { name?: string, surname?: string, lastName?: string, contacts?: object[] }
+  + contacts - массив объектов контактов вида { type: string, value: string }
++ `DELETE /api/clients/{id}` - удалить клиента по ID
+
+****
+
+
